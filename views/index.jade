@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    form
+        input(type="text", name="search", placeholder="Search")
+        label(for="delivery" class="sameLine") Delivery Only:
+        input(type="checkbox", name="delivery", class="sameLine")
+        input(type="submit", value="Submit" action="./results.html")
+    each item in data
+        a(href="/places/" + item.place_id)
+            ul(class="hoverShadow")
+                li=item.name
+                li=item.vicinity
+    

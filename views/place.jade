@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    ul
+        li=data.result.name
+        li=data.result.formatted_address
+        li=data.result.formatted_phone_number
+        li: a(href=data.result.website) website
+        - var values = data.result.opening_hours.weekday_text
+        each val in values
+            li=val
